@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Built in form validation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Built-In Form Validation</h1>
+    <div class="form">
+    <form action="" method="post">
+        <fieldset>
+            <legend>Do you have a Driver's license ?</legend>
+        <!--Hence one radio button is selected in same-named group selected at a time,
+        only one option will have "required" attribute is enough-->
+        <input type="radio" name="driver" id="r1" value="yes"  required>
+        <label for="r1">Yes</label>
+        <input type="radio" name="driver" id="r2" value="no" required>
+        <label for="r2">No</label>
+    </fieldset>
+    <p>
+        <label for="age">How old are you?</label>
+        <!-- The pattern attribute can act as a fallback for browsers which
+         don't implement the number input type but support the pattern attribute.
+         Please note that browsers that support the pattern attribute will make it
+         fail silently when used with a number field.
+         Its usage here acts only as a fallback -->
+         <input type="number" id="age" name="age" min="18" max="120" step="1" pattern="\d+">
+    </p>
+    <p>
+        <label for="fruit">what is your favourite fruit ?<span aria-label="required">*</span></label>
+        <input type="text" id="fruit" name="fruit" list="list-fruit" required
+        pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range" />
+        <datalist id="list-fruit">
+            <option value="banana">Banana</option>
+            <option value="cherry">Cherry</option>
+            <option value="apple">Apple</option>
+            <option value="strawberry">Strawberry</option>
+            <option value="lemon">Lemon</option>
+            <option value="orange">Orange</option> 
+        </datalist>
+    </p>
+    <p>
+        <label for="email">What is your email address ?</label>
+        <input type="email" id="email" name="email">
+    </p>
+    <p>
+        <label for="msg">Leave a short message</label><br>
+        <textarea name="msg" id="msg" maxlength="140" cols="50" rows="5"></textarea>
+    </p>
+    <p>
+        <button>Submit</button>
+    </p>
+
+    </form>
+</div>
+    
+</body>
+</html>
